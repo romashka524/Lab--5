@@ -1,0 +1,80 @@
+﻿
+@Color: #df18d6;
+@header-font: Georgia;
+@fontSize:15px;
+@fontFamily:Comic Sans MS;
+
+.box
+{
+   background-color: #eeff24;
+   color: #7117e7;
+   font-size: 25px;
+   font-family:@header-font;
+   padding: 10px;
+    margin: 30px;
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+}
+.it-mixin(@fontSize: 20px, @fontFamily: 'Times New Romans') 
+{
+    list-style-position: inside;
+  
+}
+
+
+.h1-mixin(@FontFamily:'Arial')
+{
+    color: #f80c0c;
+font-size: @fontSize;
+
+}
+
+.container
+{
+    .box();
+        ol {
+            li{
+                .it-mixin();
+            }
+        }
+    h1{
+        .h1-mixin();
+    }
+        
+}
+    
+.container1
+{
+    .box();
+        ol {
+            li{
+                .it-mixin(@fontFamily);
+            }
+             
+        }
+    h1{
+        .h1-mixin(@fontFamily);
+        font-style: italic;
+        font-size:25px;
+        color:darkorchid
+      
+    }
+        
+}
+
+.container2
+{
+    .box();
+        ol {
+            li{
+                 .it-mixin(@fontSize);
+            }
+        }
+    h1{
+        .h1-mixin();
+          font-style: oblique;
+          font-size:40px;
+    }
+        
+}
